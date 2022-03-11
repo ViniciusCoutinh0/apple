@@ -1,0 +1,258 @@
+@import '../../node_modules/bootstrap/scss/_functions.scss';
+
+$body-bg: #F7F8FC;
+$body-color: #1B2F50;
+
+$font-family-sans-serif: 'Inter',
+sans-serif;
+$headings-font-family: 'Sora',
+sans-serif;
+
+$headings-font-weight: bold;
+$headings-margin-bottom: 0;
+
+$form-label-font-weight: 600;
+$form-label-margin-bottom: .2rem;
+
+$input-bg: #F3F5F9;
+$input-border-color: #EDEEF1;
+$input-placeholder-color: #CFD3DC;
+
+$form-select-indicator-color: #CFD3DC;
+
+$primary: #0277E7;
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(70%);
+}
+
+textarea {
+    resize: none !important;
+}
+
+header {
+    width: 100%;
+    background-color: #FEFEFE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 2rem;
+}
+
+header>.user {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+header>nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+header>nav ul a {
+    color: #1B2F50;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 8px;
+    transition: color 400ms;
+}
+
+header>nav ul li a:hover {
+    color: #CFD3DC;
+}
+
+.box {
+    width: auto;
+    display: block;
+    background-color: #FEFEFE;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 1px solid #EDEEF1;
+}
+
+.box>.header {
+    font-weight: bold;
+    border-bottom: 1px solid #EDEEF1;
+}
+
+.box>.content {
+    display: block;
+}
+
+.box>.footer {
+    display: block;
+    border-top: 1px solid #EDEEF1;
+}
+
+.box>.header,
+.content,
+.footer {
+    padding: 16px;
+}
+
+.box>.content p {
+    // word-break: break-all;
+}
+
+.kanban {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.kanban>.item {
+    flex-basis: calc((1368px / 3) - 36px);
+}
+
+.board {
+    width: 100%;
+    background-color: #EDEEF1;
+    padding: 16px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    height: calc(100vh - 200px);
+    overflow-x: auto;
+}
+
+.board::-webkit-scrollbar-track {
+    padding: 2px 0;
+    background-color: #E5E5E5 ;
+    //border-radius
+}
+
+.board::-webkit-scrollbar {
+    width: 10px;
+}
+
+.board::-webkit-scrollbar-thumb {
+    background-color: #CFD3DC;
+    border: 1px solid #CFD3DC;
+    border-radius: 8px;
+}
+
+.board>.card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    cursor: grab;
+    margin-bottom: 1rem;
+}
+
+.board>.card>.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: .3rem;
+}
+
+.card>.content > .detail {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    
+}
+
+.state {
+    min-width: 90px;
+    border-radius: 16px;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 4px;
+    display: block;
+}
+
+.state.blue {
+    background-color: #0277E7;
+}
+
+.state.cyan {
+    background-color: #02BEE7;
+}
+
+.state.green {
+    background-color: #4BE702;
+}
+
+img.avatar {
+    width: 35px;
+    height: 35px;
+    display: block;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: 2px solid #EDEEF1;
+    object-fit: cover;
+}
+
+img.avatar.small {
+    width: 75px;
+    height: 75px;
+}
+
+img.avatar.medium {
+    width: 150px;
+    height: 150px;
+}
+
+img.avatar.large {
+    width: 225px;
+    height: 225px;
+}
+
+.notification {
+    position: relative;
+}
+
+.notification span {
+    background-color: #4BE702;
+    color: #FFFFFF;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-family: 'Sora', sans-serif;
+    font-weight: bold;
+    top: 0;
+    right: 0;
+    position: absolute;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+
+.text-gray {
+    color: #CFD3DC;
+}
+
+.btn {
+    color: #FFFFFF !important;
+}
+
+@import '../../node_modules/bootstrap/scss/_variables.scss';
+@import '../../node_modules/bootstrap/scss/_mixins.scss';
+@import '../../node_modules/bootstrap/scss/_root.scss';
+
+@import '../../node_modules/bootstrap/scss/reboot';
+
+@import '../../node_modules/bootstrap/scss/grid';
+@import '../../node_modules/bootstrap/scss/containers';
+
+@import '../../node_modules/bootstrap/scss/forms';
+@import '../../node_modules/bootstrap/scss/alert';
+@import '../../node_modules/bootstrap/scss/modal';
+@import '../../node_modules/bootstrap/scss/buttons';
+
+@import '../../node_modules/bootstrap/scss/utilities';
+@import '../../node_modules/bootstrap/scss/utilities/api';

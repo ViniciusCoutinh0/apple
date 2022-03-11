@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Promofarma</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <header>
+        <div class="user">
+            <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com" alt="icon.jpg" class="avatar">
+            <div>
+                <span class="text-gray">Olá,</span>
+                <h6>Vinicius Coutinho</h6>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Página Inicial</a></li>
+                <li><a href="#">Criar Tarefa</a></li>
+                <li><a href="#">Lista de Tarefas Lançadas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-xl-4 col-xxl-4">
+                <div class="box mb-3">
+                    <div class="header">Configurações Básicas</div>
+                    <div class="content">
+                        <div class="mb-3">
+                            <label for="for" class="form-label">Destinatário:</label>
+                            <select name="for" id="for" class="form-select form-select-lg" required>
+                                <option value disabled selected>Selecione o destinatário</option>
+                                <option value="1">Todas Lojas</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="priority" class="form-label">Prioridade:</label>
+                            <select name="priority" id="priority" class="form-select form-select-lg" required>
+                                <option value disabled selected>Selecione o nivel de prioridade</option>
+                                <option value="1">Alta</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="deadline" class="form-label">Data Final:</label>
+                            <input type="date" name="deadline" id="deadline" class="form-control form-control-lg"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check form-check-lg form-switch">
+                                <input type="checkbox" name="isFile" id="isFile"
+                                    class="form-check-input">
+                                <label for="isFile" class="form-check-label">Recebimento de arquivos?</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="header">Configurações de Arquivo</div>
+                    <div class="content">
+                        <div>
+                            <label for="type" class="form-label">Prioridade:</label>
+                            <select name="type" id="type" class="form-select form-select-lg" required>
+                                <option value disabled selected>Selecione o nivel de prioridade</option>
+                                <option value="1">Planilhas</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-xl-8 col-xxl-8">
+                <div class="box mb-3">
+                    <div class="header">Informações da Tarefa</div>
+                    <div class="content">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Título da Tarefa:</label>
+                            <input type="text" name="title" id="title" placeholder="Dê um título para está tarefa..."
+                                class="form-control form-control-lg" autocomplete="off" required>
+                        </div>
+                        <div>
+                            <label for="description" class="form-label">Descrição:</label>
+                            <textarea name="description" id="description" rows="7"
+                                placeholder="Transcreva aqui a descrição da tarefa..."
+                                class="form-control form-control-lg" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-lg btn-primary">Salvar</button>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
