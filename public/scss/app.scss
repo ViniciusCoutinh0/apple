@@ -21,6 +21,8 @@ $input-placeholder-color: #CFD3DC;
 $form-select-indicator-color: #CFD3DC;
 
 $primary: #0277E7;
+$success: #4BE702;
+$danger: #E70254;
 
 ::-webkit-calendar-picker-indicator {
     filter: invert(70%);
@@ -46,6 +48,15 @@ header>.user {
     align-items: center;
 }
 
+header>nav #button-menu {
+    background-color: transparent;
+    color: #1B2F50;
+    font-weight: bold;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    display: none;
+}
+
 header>nav ul {
     list-style: none;
     display: flex;
@@ -58,11 +69,11 @@ header>nav ul a {
     font-weight: bold;
     text-decoration: none;
     margin: 8px;
-    transition: color 400ms;
+    transition: color .6s;
 }
 
 header>nav ul li a:hover {
-    color: #CFD3DC;
+    color: #626F84;
 }
 
 .box {
@@ -90,24 +101,21 @@ header>nav ul li a:hover {
 }
 
 .box>.header,
-.content,
-.footer {
+.box>.content,
+.box>.footer {
     padding: 16px;
-}
-
-.box>.content p {
-    // word-break: break-all;
 }
 
 .kanban {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    padding: 1rem;
+    align-items: center;
+    padding: 16px;
 }
 
 .kanban>.item {
-    flex-basis: calc((1368px / 3) - 36px);
+    flex-basis: calc((100% / 3) - 20px);
 }
 
 .board {
@@ -123,8 +131,7 @@ header>nav ul li a:hover {
 
 .board::-webkit-scrollbar-track {
     padding: 2px 0;
-    background-color: #E5E5E5 ;
-    //border-radius
+    background-color: #E5E5E5;
 }
 
 .board::-webkit-scrollbar {
@@ -143,21 +150,21 @@ header>nav ul li a:hover {
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     cursor: grab;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
-.board>.card>.content {
+.card>.content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: .3rem;
+    padding: 16px;
 }
 
-.card>.content > .detail {
+.card>.content>.detail {
     display: flex;
     align-items: center;
     gap: .6rem;
-    
 }
 
 .state {
@@ -216,7 +223,7 @@ img.avatar.large {
 }
 
 .notification span {
-    background-color: #4BE702;
+    background-color: transparent;
     color: #FFFFFF;
     width: 25px;
     height: 25px;
@@ -231,6 +238,49 @@ img.avatar.large {
     -webkit-border-radius: 50%;
 }
 
+.notification span.blue {
+    background-color: #0277E7;
+}
+
+.notification span.green {
+    background-color: #4BE702;
+}
+
+.notification span.red {
+    background-color: #E70254;
+}
+
+.filters-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 16px;
+}
+
+.filters-container>.filter-content {
+    display: block;
+}
+
+.filters-container .filter-button {
+    background-color: #CFD3DC;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    padding: 2px 16px;
+    color: #FFFFFF;
+    font-weight: 500;
+    vertical-align: middle;
+    display: inline-block;
+    transition: background .6s;
+}
+
+.filter-button.active {
+    background-color: #1B2F50;
+}
+
+.filter-button:hover:not(.active) {
+    background-color: #c7cbd4;
+}
 
 .text-gray {
     color: #CFD3DC;
@@ -256,3 +306,51 @@ img.avatar.large {
 
 @import '../../node_modules/bootstrap/scss/utilities';
 @import '../../node_modules/bootstrap/scss/utilities/api';
+
+@include media-breakpoint-down(sm) {
+    header>nav #button-menu {
+        display: block;
+    }
+
+    header>nav ul {
+        background-color: #EDEEF1;
+        position: absolute;
+        width: 100%;
+        height: 0;
+        top: 70px;
+        right: 0;
+        z-index: 1000;
+        transition: .6s;
+        visibility: hidden;
+        overflow-y: hidden;
+        display: block;
+    }
+
+    header>nav ul li {
+        padding: 16px 0;
+        margin: 0 16px;
+        border-bottom: 1px solid #CFD3DC;
+    }
+
+    header>nav.active ul {
+        height: calc(100vh - 70px); // calc - 70
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .filters-container>.filter-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .filters-container .filter-button {
+        margin: 3px;
+    }
+
+    .kanban {
+        overflow-x: scroll;
+        gap: 20px;
+    }
+}

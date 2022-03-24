@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Promofarma</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <header>
+        <div class="user">
+            <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com" alt="icon.jpg" class="avatar">
+            <div>
+                <span class="text-gray">Olá,</span>
+                <h6>Vinicius Coutinho</h6>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Página Inicial</a></li>
+                <li><a href="#">Criar Tarefa</a></li>
+                <li><a href="#">Lista de Tarefas Lançadas</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="d-flex flex-wrap flex-column gap-3 flex-sm-row align-items-sm-end justify-content-sm-end mb-3">
+            <div>
+                <div class="dropdown">
+                    <div class="notification">
+                        <span id="count" style="top: -11px; right: -3px;">0</span> 
+                    </div>
+                    <a class="btn btn-lg btn-default dropdown-toggle text-start d-block" type="button" id="filterMenu"
+                        data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filtros
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="filterMenu">
+                        <li>
+                            <h6 class="dropdown-header">Seções</h6>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="form-check">
+                                <label for="varejinho" class="form-check-label">Varejinho</label>
+                                <input type="checkbox" name="varejinho" id="varejinho" class="form-check-input">
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="form-check">
+                                <label for="secao_intima" class="form-check-label">Seção Intima</label>
+                                <input type="checkbox" name="secao_intima" id="secao_intima" class="form-check-input">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <label for="state" class="form-label">Estado:</label>
+                <select name="state" id="state" class="form-select form-select-lg" required>
+                    <option value disabled selected>Filtrar por Estado</option>
+                    <option value="1">Pendente</option>
+                    <option value="2">Em Analise</option>
+                    <option value="3">Concluído</option>
+                </select>
+            </div>
+            <div>
+                <label for="store" class="form-label">Loja:</label>
+                <select name="store" id="store" class="form-select form-select-lg" required>
+                    <option value disabled selected>Filtrar por Loja</option>
+                    <option value="1">Loja 1</option>
+                    <option value="2">Loja 2</option>
+                    <option value="3">Loja 3</option>
+                </select>
+            </div>
+            <div>
+                <div class="d-grid">
+                    <button class="btn btn-lg btn-primary">Aplicar</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="box-inline">
+                    <div class="content">
+                        <div class="group">
+                            <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com" alt="icon.jpg"
+                                class="avatar small">
+                            <div>
+                                <small class="text-gray">Criado por:</small>
+                                <h6>Vinicius Coutinho</h6>
+                            </div>
+                            <div>
+                                <small class="text-gray">Destinatario:</small>
+                                <h6>Loja 01</h6>
+                            </div>
+                            <div>
+                                <small class="text-gray">Estado:</small>
+                                <h6>Pendente</h6>
+                            </div>
+                            <div>
+                                <small class="text-gray">Previsão de Entrega:</small>
+                                <h6>11/03/2022</h6>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-lg btn-primary">Visualizar</a>
+                    </div>
+                </div>
+                <div class="box-inline">
+                    <div class="content">
+                        <div class="group">
+                            <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com" alt="icon.jpg"
+                                class="avatar small">
+                            <div>
+                                <small class="text-gray">Criado por:</small>
+                                <h6>Vinicius Coutinho</h6>
+                            </div>
+                            <div>
+                                <small class="text-gray">Destinatario:</small>
+                                <h6>Loja 01</h6>
+                            </div>
+                            <div>
+                                <small class="text-gray">Estado:</small>
+                                <h6>Pendente</h6>
+                            </div>
+                            <div>
+                                <small class="text-gray">Previsão de Entrega:</small>
+                                <h6>11/03/2022</h6>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-lg btn-primary">Visualizar</a>
+                    </div>
+                </div>
+                <div class="box-inline bg-gray">
+                    <div class="content">
+                        <div class="group">
+                            <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com" alt="icon.jpg"
+                                class="avatar small">
+                            <div>
+                                <small class="text-gray">Criado por:</small>
+                                <h6>Vinicius Coutinho</h6>
+                            </div>
+                            <div>
+                                <small class="text-gray">Destinatario:</small>
+                                <h6>Loja 01</h6>
+                            </div>
+                            <div>
+                                <small class="text-gray">Estado:</small>
+                                <h6 class="text-success">Concluído</h6>
+                            </div>
+                            <div>
+                                <small class="text-gray">Previsão de Entrega:</small>
+                                <h6>11/03/2022</h6>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-lg btn-primary">Visualizar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="javascript/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+    const items = document.querySelectorAll('.dropdown-menu > li > .form-check > .form-check-input');
+    const count = document.getElementById('count');
+
+    let i = 0;
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            item.checked ? i++ : i--;
+            count.innerHTML = i;
+        });
+    });
+</script>
+
+</html>

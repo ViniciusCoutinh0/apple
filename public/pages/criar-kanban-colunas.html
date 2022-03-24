@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <header>
+        <div class="user">
+            <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com" alt="icon.jpg" class="avatar">
+            <div>
+                <span class="text-gray">Olá,</span>
+                <div class="dropdown">
+                    <a href="#" role="button" id="menuDropdown" class="text-reset text-decoration-none"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <h6 class="dropdown-toggle">Vinicius Coutinho</h6>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <h6 class="dropdown-header">Menu</h6>
+                        </li>
+                        <li><a href="#" class="dropdown-item">Configurações da Conta</a></li>
+                        <li><a href="#" class="dropdown-item">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Página Inicial</a></li>
+                <li><a href="#">Criar Tarefa</a></li>
+                <li><a href="#">Lista de Tarefas Lançadas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-xl-4 col-xxl-4">
+                <div class="box mb-3">
+                    <div class="header">Menu</div>
+                    <div class="content">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com" alt="icon.jpg"
+                                class="avatar small">
+                            <div>
+                                <small class="text-gray">Olá,</small>
+                                <h5>Vinicius Coutinho</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="list-group" role="menu">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                Informações Básicas
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action active">
+                                Kanban
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                Kanban - Colunas
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                Campos Personalizados
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-xl-8 col-xxl-8">
+                <form action="" method="post" id="save-form">
+                    <div class="box mb-2">
+                        <div class="header">Kanban</div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                                    <label for="name" class="form-label">Nome:</label>
+                                    <input type="text" name="name" id="name" placeholder="Enunciado do kanban"
+                                        class="form-control form-control-lg" autocomplete="off" required>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                                    <div>
+                                        <label for="state" class="form-label">Estado:</label>
+                                        <select name="state" id="state" class="form-select form-select-lg" required>
+                                            <option value disabled selected>Selecione uma opção</option>
+                                            <option value="1">Ativo</option>
+                                            <option value="2">Inativo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box mb-2">
+                        <div class="header">
+                            <div class="d-flex align-items-center justify-content-between">
+                                Colunas
+                                <div>
+                                    <button type="button" role="button" id="append"
+                                        class="btn btn-sm btn-primary">Adicionar</button>
+                                    <button type="button" role="button" id="clear"
+                                        class="btn btn-sm btn-default">Limpar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="alert alert-info" role="alert">
+                                Adicione campos do kanban.
+                            </div>
+                            <div id="column"></div>
+                        </div>
+                    </div>
+                    <button class="btn btn-lg btn-primary" id="button-save">Salvar</button>
+            </div>
+            </form>
+        </div>
+    </main>
+</body>
+<script src="javascript/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+    const column = document.querySelector('#column');
+
+    const appendButton = document.querySelector('#append');
+    const clearButton = document.querySelector('#clear');
+
+    const row = document.createElement('div');
+    row.classList.add('row');
+
+    function create() {
+        let child = row.children.length;
+
+        const col = document.createElement('div');
+        col.classList.add('col');
+        col.classList.add('notification');
+
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        const span = document.createElement('span');
+
+        span.id = 'remove';
+        span.innerHTML = '<a href="#" onclick="remove(this)" class="text-decoration-none text-reset">x</a>';
+        span.style.position = 'absolute';
+        span.style.backgroundColor = '#E70254';
+        span.style.top = 0;
+        span.style.right = '8px';
+
+        label.setAttribute('for', 'column_' + child);
+        label.classList.add('form-label');
+        label.innerText = 'Enunciado:';
+
+        input.type = 'text';
+        input.name = 'columns[][' + child + ']';
+        input.id = 'column_' + child;
+        input.placeholder = 'Dê um nome a coluna...';
+        input.required = true;
+        input.autocomplete = 'off';
+        input.classList.add('form-control');
+
+        col.appendChild(label);
+        col.appendChild(span);
+        col.appendChild(input);
+        row.appendChild(col)
+        column.appendChild(row);
+    }
+
+    function clear() {
+        let childs = row.children.length;
+
+        if (!childs) {
+            return;
+        }
+
+        for (i = 0; i < childs; i++) {
+            row.removeChild(row.lastChild);
+        }
+    }
+
+    function remove(el) {
+        row.removeChild(el.parentElement.parentElement);
+    }
+
+    function handlerSubmitForm(form, button) {
+        form.addEventListener('submit', (e) => {
+
+            if (!row.children.length) {
+                window.alert('Você deve adicionar ao menos uma coluna para continuar');
+                e.preventDefault();
+                return;
+            }
+
+            button.disabled = true;
+            button.innerHTML = 'Enviando informações...';
+        });
+    }
+
+    handlerSubmitForm(
+        document.querySelector('#save-form'),
+        document.querySelector('#save-button')
+    );
+
+    appendButton.addEventListener('click', create);
+    clearButton.addEventListener('click', clear);
+</script>
+
+</html>
