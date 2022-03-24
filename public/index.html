@@ -40,9 +40,9 @@
             <div class="filter-content">
                 <div class="text-gray">Visualização de Tarefas</div>
                 <div>
-                    <button type="button" class="filter-button active">Todas</button>
-                    <button type="button" class="filter-button">Compras</button>
-                    <button type="button" class="filter-button">Tesouria</button>
+                    <button type="button" class="filter-button active" id="clear">Todas</button>
+                    <button type="button" class="filter-button" data-task-bind="Compras">Compras</button>
+                    <button type="button" class="filter-button" data-task-bind="Supervisão">Supervisão</button>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                 <h4>Pendente</h4>
                 <div class="board">
                     <!-- cards -->
-                    <div class="card" draggable="true">
+                    <div class="card" data-task-bindTo="Supervisão" draggable="true">
                         <div class="content">
                             <div class="detail">
                                 <div class="notification">
@@ -60,125 +60,14 @@
                                         alt="icon.jpg" class="avatar small">
                                 </div>
                                 <div>
-                                    <h6><a href="#" class="text-decoration-none text-reset">Varejinho</a></h6>
+                                    <h6><a href="#" class="text-decoration-none text-reset">Planilha Acompanhamento Loja</a></h6>
                                     <div class="d-flex flex-column gap-2">
-                                        <small class="text-gray">LOJA 12</small>
+                                        <small class="text-gray">LOJA 01</small>
                                         <small class="text-danger fw-bold">Atrasada à 10 dia(s)</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="state blue">Pendente</div>
-                        </div>
-                    </div>
-                    <div class="card" draggable="true">
-                        <div class="content">
-                            <div class="detail">
-                                <div class="notification">
-                                    <span class="red">1</span>
-                                    <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
-                                        alt="icon.jpg" class="avatar small">
-                                </div>
-                                <div>
-                                    <h6>Varejinho</h6>
-                                    <div class="d-flex flex-column gap-2">
-                                        <small class="text-gray">LOJA 12</small>
-                                        <small class="text-danger fw-bold">Atrasada à 10 dia(s)</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="state blue">Pendente</div>
-                        </div>
-                    </div>
-                    <div class="card" draggable="true">
-                        <div class="content">
-                            <div class="detail">
-                                <div class="notification">
-                                    <span class="blue">1</span>
-                                    <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
-                                        alt="icon.jpg" class="avatar small">
-                                </div>
-                                <div>
-                                    <h6>Varejinho</h6>
-                                    <div class="d-flex flex-column gap-2">
-                                        <small class="text-gray">LOJA 12</small>
-                                        <small class="text-danger fw-bold">Atrasada à 10 dia(s)</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="state blue">Pendente</div>
-                        </div>
-                    </div>
-                    <div class="card" draggable="true">
-                        <div class="content">
-                            <div class="detail">
-                                <div class="notification">
-                                    <span>1</span>
-                                    <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
-                                        alt="icon.jpg" class="avatar small">
-                                </div>
-                                <div>
-                                    <h6>Varejinho</h6>
-                                    <div class="d-flex flex-column gap-2">
-                                        <small class="text-gray">LOJA 12</small>
-                                        <small class="text-danger fw-bold">Atrasada à 10 dia(s)</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="state blue">Pendente</div>
-                        </div>
-                    </div>
-                    <div class="card" draggable="true">
-                        <div class="content">
-                            <div class="detail">
-                                <div class="notification">
-                                    <span>1</span>
-                                    <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
-                                        alt="icon.jpg" class="avatar small">
-                                </div>
-                                <div>
-                                    <h6>Varejinho</h6>
-                                    <div class="d-flex flex-column gap-2">
-                                        <small class="text-gray">LOJA 12</small>
-                                        <small class="text-danger fw-bold">Atrasada à 10 dia(s)</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="state blue">Pendente</div>
-                        </div>
-                    </div>
-                    <div class="card" draggable="true">
-                        <div class="content">
-                            <div class="detail">
-                                <div class="notification">
-                                    <span>1</span>
-                                    <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
-                                        alt="icon.jpg" class="avatar small">
-                                </div>
-                                <div>
-                                    <h6>Varejinho</h6>
-                                    <div class="d-flex flex-column gap-2">
-                                        <small class="text-gray">LOJA 12</small>
-                                        <small class="text-danger fw-bold">Atrasada à 10 dia(s)</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="state blue">Pendente</div>
-                        </div>
-                    </div>
-                    <div class="card" draggable="true">
-                        <div class="content">
-                            <div class="detail">
-                                <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
-                                    alt="icon.jpg" class="avatar small">
-                                <div>
-                                    <h6>Ponta de Gondola</h6>
-                                    <div class="d-flex flex-column text-gray">
-                                        <small>LOJA 16</small>
-                                        <small>Em aberto a 10 dia(s)</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="state blue">Pendente</div>
+                            <div class="state blue">Supervisão</div>
                         </div>
                     </div>
                     <!-- cards -->
@@ -187,43 +76,53 @@
             <div class="item">
                 <h4>Em Análise</h4>
                 <div class="board">
-                    <div class="card" draggable="true">
+                    <!-- cards -->
+                    <div class="card" data-task-bindTo="Compras" draggable="true">
                         <div class="content">
                             <div class="detail">
-                                <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
-                                    alt="icon.jpg" class="avatar small">
+                                <div class="notification">
+                                    <span class="green">1</span>
+                                    <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
+                                        alt="icon.jpg" class="avatar small">
+                                </div>
                                 <div>
-                                    <h6>Varejinho</h6>
-                                    <div class="d-flex flex-column gap-2 text-gray">
-                                        <small>LOJA 12</small>
-                                        <!-- <small>Em aberto a 10 dia(s)</small> -->
+                                    <h6><a href="#" class="text-decoration-none text-reset">Seção Varejinho</a></h6>
+                                    <div class="d-flex flex-column gap-2">
+                                        <small class="text-gray">LOJA 43</small>
+                                        <small class="text-danger fw-bold">Atrasada à 10 dia(s)</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="state cyan">Em Análise</div>
+                            <div class="state cyan">Compras</div>
                         </div>
                     </div>
+                    <!-- cards -->
                 </div>
             </div>
             <div class="item">
                 <h4>Concluído</h4>
                 <div class="board">
-                    <div class="card" draggable="true">
+                    <!-- cards -->
+                    <div class="card" data-task-bindTo="Compras" draggable="true">
                         <div class="content">
                             <div class="detail">
-                                <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
-                                    alt="icon.jpg" class="avatar small">
+                                <div class="notification">
+                                    <span class="green">1</span>
+                                    <img src="https://via.placeholder.com/150/1B2F50/1B2F50%20?Text=Digital.com"
+                                        alt="icon.jpg" class="avatar small">
+                                </div>
                                 <div>
-                                    <h6>Varejinho</h6>
-                                    <div class="d-flex flex-column gap-2 text-gray">
-                                        <small>LOJA 12</small>
-                                        <!-- <small>Em aberto a 10 dia(s)</small> -->
+                                    <h6><a href="#" class="text-decoration-none text-reset">Seção Fraldas</a></h6>
+                                    <div class="d-flex flex-column gap-2">
+                                        <small class="text-gray">LOJA 12</small>
+                                        <small class="text-danger fw-bold">Atrasada à 10 dia(s)</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="state green">Concluído</div>
+                            <div class="state green">Compras</div>
                         </div>
                     </div>
+                    <!-- cards -->
                 </div>
             </div>
 
@@ -231,21 +130,8 @@
     </main>
 
 </body>
-<script type="text/javascript">
-    const button = document.querySelector('#button-menu');
-    const icon = document.querySelector('.bi');
-
-    function toggle(event) {
-        if (event.type === 'touchstart') {
-            event.preventDefault();
-        }
-
-        const nav = document.querySelector('nav');
-        nav.classList.toggle('active');
-    }
-
-    button.addEventListener('click', toggle);
-    button.addEventListener('touchstart', toggle);
-</script>
+<script src="public/javascript/menu.js"></script>
+<script src="public/javascript/filterKanban.js"></script>
+<script src="public/javascript/kanban.js"></script>
 
 </html>
